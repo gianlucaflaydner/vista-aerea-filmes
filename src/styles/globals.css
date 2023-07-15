@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 html {
-    font-family: "Nunito", sans-serif;
+    font-family: "Roboto", sans-serif;
     background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);
-    color: #fff;
   }

@@ -13,7 +13,7 @@ export default function Header() {
           height={40}
           className="rounded-full"
         />
-        <h1 className="text-2xl md:block hidden font-bold">
+        <h1 className="text-2xl md:block hidden font-bold text-white">
           {" "}
           VISTA AÉREA FILMES
         </h1>
@@ -23,7 +23,7 @@ export default function Header() {
           <li className="sm:text-xl">
             <Link
               href="/sobre"
-              className="hover:text-orange-200 transition delay-150 ease-in-out"
+              className="hover:text-orange-200 transition delay-150 ease-in-out text-white"
             >
               Sobre mim
             </Link>
@@ -31,7 +31,7 @@ export default function Header() {
           <li className="sm:text-xl">
             <Link
               href="/portfolio"
-              className="hover:text-orange-200 transition delay-150 ease-in-out"
+              className="hover:text-orange-200 transition delay-150 ease-in-out text-white"
             >
               Portfólio
             </Link>
@@ -39,7 +39,7 @@ export default function Header() {
           <li className="sm:text-xl">
             <Link
               href="/contato"
-              className="hover:text-orange-200 transition delay-150 ease-in-out"
+              className="hover:text-orange-200 transition delay-150 ease-in-out text-white"
             >
               Contato
             </Link>

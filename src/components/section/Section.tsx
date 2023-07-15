@@ -4,11 +4,12 @@ import clsx from "clsx";
 interface SectionProps {
   reverse: boolean;
   className?: string;
-  backgroundChange: boolean;
+  backgroundChange?: boolean;
   imageSource: StaticImageData;
   imageAltText: string;
   sectionTitle: string;
   sectionText: string;
+  italic?: boolean;
 }
 
 export default function Section(props: SectionProps) {
@@ -20,6 +21,7 @@ export default function Section(props: SectionProps) {
     sectionTitle,
     className,
     sectionText,
+    italic,
   } = props;
 
   return (
@@ -38,15 +40,19 @@ export default function Section(props: SectionProps) {
           alt={imageAltText}
           width={300}
           height={100}
-          className=""
+          className="rounded"
         />
       </div>
 
       <div className="flex flex-col items-center justify-center gap-6 text-center w-screen px-5 md:w-1/2 ">
-        <h1 className="text-2xl md:text-4xl font-bold"> {sectionTitle}</h1>
-        <p className="text-xl font-medium">
-          {" "}
-          <i>{sectionText}</i>
+        <h1 className="text-2xl md:text-4xl font-extrabold"> {sectionTitle}</h1>
+        <p
+          className={clsx(
+            "text-transparent text-md bg-clip-text bg-gradient-to-r from-gray-800 to-gray-600 font-semibold",
+            italic && "italic"
+          )}
+        >
+          {sectionText}
         </p>
       </div>
     </section>
