@@ -29,20 +29,20 @@ export default function Header() {
             </Link>
           </li>
           <li className="sm:text-xl">
-            <Link
-              href="/portfolio"
-              className="hover:text-orange-200 transition delay-150 ease-in-out text-white"
+            <a
+              href="#portifolio"
+              className="hover:text-orange-200 transition delay-150 ease-in-out text-white scroll-smooth"
             >
               Portfólio
-            </Link>
+            </a>
           </li>
           <li className="sm:text-xl">
-            <Link
-              href="/contato"
-              className="hover:text-orange-200 transition delay-150 ease-in-out text-white"
+            <a
+              href="#contato"
+              className="hover:text-orange-200 transition delay-150 ease-in-out text-white scroll-smooth"
             >
               Contato
-            </Link>
+            </a>
           </li>
         </ul>
       </nav>

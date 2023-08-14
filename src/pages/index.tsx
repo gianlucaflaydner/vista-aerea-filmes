@@ -1,14 +1,15 @@
 import Section from "@/components/section/Section";
-import { Roboto } from "next/font/google";
+
 import siteLogo from "../../public/images/vista-aerea-logo.png";
 import PortfolioSection from "@/components/portfolio-section/PortfolioSection";
-const roboto = Roboto({ subsets: ["latin"], weight: "100" });
+import Fab from "@/components/fab/Fab";
+import ContactSection from "@/components/contact-section/ContactSection";
 
 export default function Home() {
   return (
     <>
       <main
-        className={`flex min-h-screen flex-col items-center justify-between p-24 ${roboto.className}`}
+        className={`flex min-h-screen flex-col items-center justify-between p-24 `}
       >
         <Section
           reverse={false}
@@ -20,6 +21,8 @@ export default function Home() {
           italic
         />
         <PortfolioSection />
+        <ContactSection />
+        <Fab />
       </main>
     </>
   );

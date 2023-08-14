@@ -1,5 +1,8 @@
 import Image, { StaticImageData } from "next/image";
 import clsx from "clsx";
+import { Merriweather } from "next/font/google";
+
+const merriweather = Merriweather({ subsets: ["latin"], weight: "300" });
 
 interface SectionProps {
   reverse: boolean;
@@ -27,11 +30,11 @@ export default function Section(props: SectionProps) {
   return (
     <section
       className={clsx(
-        "w-screen flex flex-col gap-10 items-center px-5 md:px-10 pt-15 py-10 ",
+        `w-screen flex flex-col gap-10 items-center px-5 md:px-10 pt-15 py-10  ${merriweather.className}`,
         className,
         reverse ? "md:flex-row-reverse" : "md:flex-row",
         backgroundChange &&
-          "bg-slate-100 text-[#181823] bg-gradient-to-r from-slate-100 to-slate-300"
+          "bg-slate-100 text-[#9b9b9e] bg-gradient-to-r from-slate-100 to-slate-300"
       )}
     >
       <div className=" w-screen md:w-1/2 flex items-center justify-center">
