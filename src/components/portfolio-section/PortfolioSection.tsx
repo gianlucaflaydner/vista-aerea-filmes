@@ -33,7 +33,7 @@ export default function PortfolioSection() {
           <SwiperSlide>
             <div className="flex items-center justify-center flex-col gap-4">
               <h1 className="font-bold text-md text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
-                E V E N T O S
+                EVENTOS
               </h1>
               <iframe
                 className="md:w-[70%] h-[300px] w-[90%]"
@@ -51,7 +51,7 @@ export default function PortfolioSection() {
           <SwiperSlide>
             <div className="flex items-center justify-center flex-col gap-4">
               <h1 className="font-bold text-md text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
-                E M P R E S A R I A L
+                EMPRESARIAL
               </h1>
               <iframe
                 className="md:w-[70%] h-[300px] w-[90%]"
@@ -66,7 +66,7 @@ export default function PortfolioSection() {
           <SwiperSlide>
             <div className="flex items-center justify-center flex-col gap-4">
               <h1 className="font-bold text-md text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
-                I N S T I T U C I O N A L
+                INSTITUCIONAL
               </h1>
               <iframe
                 className="md:w-[70%] h-[300px] w-[90%]"
@@ -81,7 +81,7 @@ export default function PortfolioSection() {
           <SwiperSlide>
             <div className="flex items-center justify-center flex-col gap-4">
               <h1 className="font-bold text-md text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
-                I M O B I L I Á R I O
+                IMOBILIÁRIO
               </h1>
               <iframe
                 className="md:w-[70%] h-[300px] w-[90%]"
@@ -96,7 +96,7 @@ export default function PortfolioSection() {
           <SwiperSlide>
             <div className="flex items-center justify-center flex-col gap-4">
               <h1 className="font-bold text-md text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
-                E V E N T O S
+                EVENTOS ORGANIZACIONAIS
               </h1>
               <iframe
                 className="md:w-[70%] h-[300px] w-[90%]"
@@ -111,7 +111,7 @@ export default function PortfolioSection() {
           <SwiperSlide>
             <div className="flex items-center justify-center flex-col gap-4">
               <h1 className="font-bold text-md text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
-                C U R R I C U L U M
+                UM POUCO SOBRE MIM
               </h1>
               <iframe
                 className="md:w-[70%] h-[300px] w-[90%]"
@@ -126,7 +126,7 @@ export default function PortfolioSection() {
           <SwiperSlide>
             <div className="flex items-center justify-center flex-col gap-4">
               <h1 className="font-bold text-md text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
-                A P R E S E N T A Ç Ã O
+                APRESENTAÇÃO EMPRESARIAL
               </h1>
               <iframe
                 className="md:w-[70%] h-[300px] w-[90%]"
