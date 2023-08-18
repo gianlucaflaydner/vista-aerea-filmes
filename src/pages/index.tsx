@@ -15,6 +15,7 @@ export default function Home() {
       <Head>
         <title>Vista Aérea Filmes</title>
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        <meta name="description" content="Vista aerea filmes page" />
       </Head>
       <main
         className={`flex min-h-screen flex-col items-center justify-between pt-24 ${oswald.className}`}

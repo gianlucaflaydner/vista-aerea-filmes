@@ -2,7 +2,7 @@ export default function AboutSection() {
   return (
     <section
       id="sobre"
-      className={`w-screen h-[600px] sm:h-[500px] flex flex-col gap-10 items-center px-5 md:px-10 pt-10 py-10}`}
+      className={`w-screen h-[600px] sm:h-[400px] flex flex-col gap-10 items-center px-5 md:px-10 pt-10 py-10}`}
     >
       <div
         role="separator"
