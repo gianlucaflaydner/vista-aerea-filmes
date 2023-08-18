@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 import emailJs from "@emailjs/browser";
 
 export default function ContactSection() {
@@ -19,7 +20,7 @@ export default function ContactSection() {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Verificar a visibilidade inicial
+    handleScroll();
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -29,7 +30,11 @@ export default function ContactSection() {
     e.preventDefault();
 
     if (name === "" || email === "" || message === "") {
-      alert("Preencha todos os campos para entrar em contato!");
+      Swal.fire({
+        icon: "question",
+        title: "Oops...",
+        text: "Algum campo não foi preenchido...",
+      });
       return;
     }
 
@@ -49,16 +54,21 @@ export default function ContactSection() {
       .then(
         (response) => {
           console.log("EMAIL ENVIADO!", response.status, response.text);
-          alert("Email enviado com sucesso! Aguarde e entrarei em contato.");
+          Swal.fire(
+            "Sucesso!",
+            "Seu email foi enviado. Logo entrarei em contato",
+            "success"
+          );
           setName("");
           setEmail("");
           setMessage("");
         },
         (error) => {
-          alert(
-            "Ocorreu algum erro no envio do email. Tente novamente ou entre em contato por Whatsapp!"
-          );
-          console.log("ERROR: ", error);
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Algum erro ocorreu... Tente novamente mais tarde.",
+          });
         }
       );
   }

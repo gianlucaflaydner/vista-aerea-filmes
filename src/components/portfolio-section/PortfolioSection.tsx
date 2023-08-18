@@ -1,6 +1,6 @@
 import { Pagination, Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Merriweather } from "next/font/google";
+
 
 import "swiper/react";
 import "swiper/css";
@@ -9,13 +9,11 @@ import "swiper/css/pagination";
 
 import Link from "next/link";
 
-const merriweather = Merriweather({ subsets: ["latin"], weight: "300" });
-
 export default function PortfolioSection() {
   return (
     <section
-      id="portifolio"
-      className={`w-screen flex flex-col gap-10 items-center px-5 md:px-10 pt-10 py-10 ${merriweather.className}`}
+      id="portfolio"
+      className={`w-screen flex flex-col gap-10 items-center px-5 md:px-10 pt-10 py-10 `}
     >
       <h1 className="font-bold text-transparent text-2xl md:text-3xl bg-clip-text bg-gradient-to-r from-white to-gray-400">
         P O R T F Ó L I O
@@ -42,7 +40,7 @@ export default function PortfolioSection() {
                 width={400}
                 height={400}
                 src="https://www.youtube.com/embed/mE9et4biPgs"
-                title="YouTube video player"
+                title="Video de gravação de eventos"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
                 loading="eager"
@@ -58,23 +56,37 @@ export default function PortfolioSection() {
               <iframe
                 className="md:w-[70%] h-[300px] w-[90%]"
                 src="https://www.youtube.com/embed/v33g_LEVk3w"
-                title="YouTube video player"
+                title="Video de gravação de propaganda empresarial"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
                 loading="eager"
               ></iframe>
             </div>
           </SwiperSlide>
-
           <SwiperSlide>
             <div className="flex items-center justify-center flex-col gap-4">
               <h1 className="font-bold text-md text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
-                E V E N T O S
+                I N S T I T U C I O N A L
               </h1>
               <iframe
                 className="md:w-[70%] h-[300px] w-[90%]"
-                src="https://www.youtube.com/embed/4Ek0g1Ws6ys"
-                title="YouTube video player"
+                src="https://www.youtube.com/embed/YBO7tqJDLyU"
+                title="Vídeo de gravação institucional"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                loading="eager"
+              ></iframe>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="flex items-center justify-center flex-col gap-4">
+              <h1 className="font-bold text-md text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
+                I M O B I L I Á R I O
+              </h1>
+              <iframe
+                className="md:w-[70%] h-[300px] w-[90%]"
+                src="https://www.youtube.com/embed/gYyZac-mPoI"
+                title="Vídeo de setor imobiliário"
                 allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
                 loading="eager"
@@ -88,9 +100,39 @@ export default function PortfolioSection() {
               </h1>
               <iframe
                 className="md:w-[70%] h-[300px] w-[90%]"
-                src="https://www.youtube.com/embed/mE9et4biPgs"
-                title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                src="https://www.youtube.com/embed/4Ek0g1Ws6ys"
+                title="Vídeo de gravação de eventos"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                loading="eager"
+              ></iframe>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="flex items-center justify-center flex-col gap-4">
+              <h1 className="font-bold text-md text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
+                C U R R I C U L U M
+              </h1>
+              <iframe
+                className="md:w-[70%] h-[300px] w-[90%]"
+                src="https://www.youtube.com/embed/jym3R8kso_I"
+                title="Vídeo de curriculum vitae"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                loading="eager"
+              ></iframe>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="flex items-center justify-center flex-col gap-4">
+              <h1 className="font-bold text-md text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
+                A P R E S E N T A Ç Ã O
+              </h1>
+              <iframe
+                className="md:w-[70%] h-[300px] w-[90%]"
+                src="https://www.youtube.com/embed/J2mDWGbRbMM"
+                title="Vídeo de apresentação empresarial"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
                 loading="eager"
               ></iframe>
@@ -99,7 +141,7 @@ export default function PortfolioSection() {
         </Swiper>
       </div>
       <Link
-        className="transform w-[120px] py-2 flex items-center justify-center text-lg bg-slate-600 text-white md:mt-5 mt-2 rounded shadow-lg transition duration-150 ease-in-out hover:scale-105 cursor-pointer hover:bg-slate-700"
+        className="transform w-[120px] py-2 flex items-center justify-center text-lg bg-slate-600 text-white md:mt-5 mt-2 shadow-lg transition duration-150 ease-in-out hover:scale-105 cursor-pointer hover:bg-slate-700"
         href="https://www.youtube.com/@vistaaereafilmes"
         target="_blank"
       >
@@ -109,6 +151,7 @@ export default function PortfolioSection() {
   );
 }
 
-{
-  /* <div className="flex flex-col items-center justify-center w-screen"></div>; */
-}
+
+
+
+

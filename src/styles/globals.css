@@ -5,8 +5,17 @@
 
 
 html {
-    font-family: "Roboto", sans-serif;
     background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);
+  }
+
+  body::-webkit-scrollbar {
+    display: none;
+  }
+
+  body {
+    -ms-overflow-y-style: none; 
+    scrollbar-width: none;
+    padding-right: 0 !important;  
   }
   @layer base {
     html {
@@ -35,3 +44,4 @@ html {
  top: 360px !important;
 }
 
+/* text */ 
