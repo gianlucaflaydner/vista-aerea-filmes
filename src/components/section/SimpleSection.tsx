@@ -46,12 +46,7 @@ export default function SimpleSection(props: SimpleSectionProps) {
 
       <div className="flex flex-col items-center justify-center gap-6 text-center w-screen px-5 md:w-1/2 ">
         <h1 className="text-2xl md:text-5xl font-extrabold"> {sectionTitle}</h1>
-        <p
-          className={clsx(
-            "text-transparent  text-md md:text-lg bg-clip-text bg-gradient-to-r from-gray-800 to-gray-600 font-semibold",
-            italic && "italic"
-          )}
-        >
+        <p className={clsx("text-slate-500  text-md md:text-lg font-semibold")}>
           {sectionText}
         </p>
       </div>

@@ -69,7 +69,7 @@ export default function PortfolioSection() {
                 INSTITUCIONAL
               </h1>
               <iframe
-                className="md:w-[70%] h-[300px] w-[90%]"
+                className="md:w-[60%] h-[300px] w-[90%]"
                 src="https://www.youtube.com/embed/YBO7tqJDLyU"
                 title="Vídeo de gravação institucional"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

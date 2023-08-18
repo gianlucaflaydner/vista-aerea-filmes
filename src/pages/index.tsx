@@ -21,12 +21,11 @@ export default function Home() {
       >
         <SimpleSection
           reverse={false}
-          sectionTitle="Vista Aérea Filmes - Taquara, RS"
+          sectionTitle="Vista Aérea Filmes - Vale do Paranhana, RS"
           sectionText="Não somente um vídeo, crio histórias em imagem para ajudar você a vender seu negócio, seu terreno ou seu empreendimento através da perspectiva aérea do drone ou em solo."
           imageSource={siteLogo}
           imageAltText="Teste"
           backgroundChange
-          italic
         />
         <PortfolioSection />
         <AboutSection />
