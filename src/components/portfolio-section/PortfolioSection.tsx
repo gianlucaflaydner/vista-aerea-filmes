@@ -142,7 +142,7 @@ export default function PortfolioSection() {
       </div>
       <Link
         className="transform w-[120px] py-2 flex items-center justify-center text-lg bg-slate-600 text-white md:mt-5 mt-2 shadow-lg transition duration-150 ease-in-out hover:scale-105 cursor-pointer hover:bg-slate-700"
-        href="https://www.youtube.com/@vistaaereafilmes"
+        href="https://www.instagram.com/vistaaereafilmes/"
         target="_blank"
       >
         VER MAIS
