@@ -35,13 +35,7 @@ export default function SimpleSection(props: SimpleSectionProps) {
       )}
     >
       <div className=" w-screen md:w-1/2 flex items-center justify-center">
-        <Image
-          src={imageSource}
-          alt={imageAltText}
-          width={300}
-          height={100}
-          className="rounded"
-        />
+        <Image src={imageSource} alt={imageAltText} width={300} height={100} />
       </div>
 
       <div className="flex flex-col items-center justify-center gap-6 text-center w-screen px-5 md:w-1/2 ">
