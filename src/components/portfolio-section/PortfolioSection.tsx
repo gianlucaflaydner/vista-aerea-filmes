@@ -1,6 +1,5 @@
 import { Pagination, Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import lazyframe from "lazyframe";
 
 import "swiper/react";
 import "swiper/css";
@@ -10,7 +9,7 @@ import "swiper/css/pagination";
 import Link from "next/link";
 
 export default function PortfolioSection() {
-  lazyframe(".lazyframe");
+
   return (
     <section
       id="portfolio"
