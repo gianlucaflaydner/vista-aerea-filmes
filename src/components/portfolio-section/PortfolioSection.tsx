@@ -16,7 +16,7 @@ export default function PortfolioSection() {
       className={`w-screen flex flex-col gap-10 items-center px-5 md:px-10 pt-10 py-10 `}
     >
       <h1 className="font-bold text-transparent text-2xl md:text-3xl bg-clip-text bg-gradient-to-r from-white to-gray-400">
-        P O R T I F Ó L I O
+        P O R T F Ó L I O
       </h1>
       <div className="flex w-screen items-center justify-center">
         <Swiper
