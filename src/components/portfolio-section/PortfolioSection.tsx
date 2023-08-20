@@ -1,6 +1,6 @@
 import { Pagination, Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import lazyframe from "lazyframe";
 
 import "swiper/react";
 import "swiper/css";
@@ -10,6 +10,7 @@ import "swiper/css/pagination";
 import Link from "next/link";
 
 export default function PortfolioSection() {
+  lazyframe(".lazyframe");
   return (
     <section
       id="portfolio"
@@ -43,7 +44,7 @@ export default function PortfolioSection() {
                 title="Video de gravação de eventos"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
-                loading="eager"
+                loading="lazy"
               ></iframe>
             </div>
           </SwiperSlide>
@@ -59,7 +60,7 @@ export default function PortfolioSection() {
                 title="Video de gravação de propaganda empresarial"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
-                loading="eager"
+                loading="lazy"
               ></iframe>
             </div>
           </SwiperSlide>
@@ -74,7 +75,7 @@ export default function PortfolioSection() {
                 title="Vídeo de gravação institucional"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
-                loading="eager"
+                loading="lazy"
               ></iframe>
             </div>
           </SwiperSlide>
@@ -89,7 +90,7 @@ export default function PortfolioSection() {
                 title="Vídeo de setor imobiliário"
                 allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
-                loading="eager"
+                loading="lazy"
               ></iframe>
             </div>
           </SwiperSlide>
@@ -104,7 +105,7 @@ export default function PortfolioSection() {
                 title="Vídeo de gravação de eventos"
                 allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
-                loading="eager"
+                loading="lazy"
               ></iframe>
             </div>
           </SwiperSlide>
@@ -119,7 +120,7 @@ export default function PortfolioSection() {
                 title="Vídeo de curriculum vitae"
                 allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
-                loading="eager"
+                loading="lazy"
               ></iframe>
             </div>
           </SwiperSlide>
@@ -134,7 +135,7 @@ export default function PortfolioSection() {
                 title="Vídeo de apresentação empresarial"
                 allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
-                loading="eager"
+                loading="lazy"
               ></iframe>
             </div>
           </SwiperSlide>
