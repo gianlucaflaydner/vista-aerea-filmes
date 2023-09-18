@@ -7,6 +7,7 @@ import SpecificationsSection from "@/components/specifications-section/Specifica
 import siteLogo from "../../public/images/vista-aerea-logo.png";
 import Head from "next/head";
 import { Oswald } from "next/font/google";
+import ClientsSection from "@/components/clients-section/ClientsSection";
 const oswald = Oswald({ subsets: ["latin"], weight: "300" });
 
 export default function Home() {
@@ -30,6 +31,7 @@ export default function Home() {
         />
         <PortfolioSection />
         <AboutSection />
+        <ClientsSection />
         <SpecificationsSection />
         <ContactSection />
         <Fab />

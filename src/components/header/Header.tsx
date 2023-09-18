@@ -9,6 +9,14 @@ export default function Header() {
       </div>
       <nav>
         <ul className="flex items-start justify-between flex-row gap-4 sm:gap-10 sm:me-10">
+        <li className="sm:text-xl">
+            <a
+              href="#clientes"
+              className="hover:text-orange-200 transition delay-150 ease-in-out text-white scroll-smooth"
+            >
+              Clientes
+            </a>
+          </li>
           <li className="sm:text-xl">
             <a
               href="#portfolio"
