@@ -2,40 +2,197 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ---------------------------------------------------------------------------
+   Placa de beira de estrada: tokens do mundo.
+   Chapa esmaltada, tinta chapada, sol a pino. A cor ocupa regiões inteiras.
+--------------------------------------------------------------------------- */
+
+:root {
+  --plate: 242 183 5; /* #F2B705 amarelo-placa, o campo dominante */
+  --asphalt: 20 20 15; /* #14140F asfalto */
+  --arrow: 214 48 15; /* #D6300F vermelho-seta, só direção e ação */
+  --route: 14 92 58; /* #0E5C3A verde-rodovia */
+  --enamel: 244 241 232; /* #F4F1E8 chapa branca esmaltada */
+
+  --shell-gutter: clamp(1.25rem, 4.5vw, 4.5rem);
+
+  /* O público lê no celular, sob sol forte: corpo nunca abaixo de 16px e
+     contraste sempre alto. */
+  /* O teto do hero é ditado pela dobra: a ação primária tem de caber no
+     primeiro viewport, senão a página de conversão perde a conversão. */
+  --step-hero: clamp(3.25rem, 11.5vw, 7.25rem);
+  --step-title: clamp(2.25rem, 6vw, 5rem);
+  --step-panel: clamp(1.5rem, 3.2vw, 2.75rem);
+  --step-lead: clamp(1.125rem, 1.7vw, 1.5rem);
+  --step-body: clamp(1rem, 1.05vw, 1.125rem);
+
+  --ease-pass: cubic-bezier(0.16, 1, 0.3, 1);
+}
 
 html {
-    background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);
-    font-display: swap;
-  }
+  background-color: rgb(var(--asphalt));
+  color: rgb(var(--asphalt));
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
 
-  body {
-    padding-right: 0 !important;  
-    overflow-x: hidden;
-  }
-  @layer base {
-    html {
-      @apply scroll-smooth;
-    }
-  }
+html.lenis,
+html.lenis body {
+  height: auto;
+}
 
-  .animated-object {
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+body {
+  background-color: rgb(var(--asphalt));
+  /* Banda reservada para o trilho de WhatsApp do celular. */
+  padding-bottom: 4rem;
+  font-variant-numeric: tabular-nums;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* A letra de placa vive em caixa alta e apertada, mas a entrelinha para em 1:
+   caixa alta acentuada em português empilha ACENTO em cima e CEDILHA embaixo
+   (ILUMINAÇÃO sobre CAPTAÇÃO), e abaixo disso os dois se encostam. */
+.lettering {
+  /* Sem Impact na pilha: e a face de sistema que o craft floor proibe como
+     voz de display. O next/font ja gera um fallback ajustado por metrica. */
+  font-family: var(--font-display), sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -0.015em;
+  line-height: 1;
+  font-weight: 400;
+  text-wrap: balance;
+}
+
+/* ---------------------------------------------------------------------------
+   Superfícies do browser. As partes que não desenhamos também carregam o
+   design.
+--------------------------------------------------------------------------- */
+
+::selection {
+  background-color: rgb(var(--arrow));
+  color: rgb(var(--enamel));
+}
+
+:root {
+  caret-color: rgb(var(--arrow));
+  accent-color: rgb(var(--arrow));
+  scrollbar-color: rgb(var(--plate)) rgb(var(--asphalt));
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(var(--asphalt));
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(var(--plate));
+  border: 3px solid rgb(var(--asphalt));
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(var(--arrow));
+}
+
+a {
+  text-underline-offset: 0.22em;
+  text-decoration-thickness: from-font;
+}
+
+:focus-visible {
+  outline: 3px solid rgb(var(--arrow));
+  outline-offset: 2px;
+}
+
+/* As âncoras paravam atrás do header fixo. */
+[id] {
+  scroll-margin-top: 5.5rem;
+}
+
+/* ---------------------------------------------------------------------------
+   Material. A chapa é um objeto físico: tem esmalte, tem sol e tem fixação.
+--------------------------------------------------------------------------- */
+
+/* Brilho de esmalte sob luz forte, cruzando a chapa na diagonal. */
+.enamel-sheen {
+  position: relative;
+  isolation: isolate;
+}
+
+.enamel-sheen::after {
+  content: "";
   position: absolute;
-  left: -100px; 
-  transition: left 1.5s ease; 
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background: linear-gradient(
+    104deg,
+    rgb(255 255 255 / 0.16) 0%,
+    rgb(255 255 255 / 0) 34%,
+    rgb(0 0 0 / 0) 66%,
+    rgb(0 0 0 / 0.08) 100%
+  );
 }
 
-@media(min-width: 960px){
-  .animated-object.visible {
-  left: 33%; 
-}
-}
-@media(max-width: 959px){
-  .animated-object.visible {
-  left: 10px; 
-}
+/* Grão de chapa pintada: a tinta serigráfica nunca é perfeitamente lisa. */
+.painted::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.3;
+  mix-blend-mode: multiply;
+  background-image: repeating-linear-gradient(
+      0deg,
+      rgb(0 0 0 / 0.5) 0px,
+      rgb(0 0 0 / 0.5) 1px,
+      transparent 1px,
+      transparent 3px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgb(0 0 0 / 0.35) 0px,
+      rgb(0 0 0 / 0.35) 1px,
+      transparent 1px,
+      transparent 4px
+    );
 }
 
-.swiper-pagination {
- top: 360px !important;
+/* ---------------------------------------------------------------------------
+   Movimento
+--------------------------------------------------------------------------- */
+
+@media (min-width: 576px) {
+  body {
+    padding-bottom: 0;
+  }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  /* As faixas param no lugar em vez de correrem em 0.01ms e sumirem. */
+  .animate-drift,
+  .animate-drift-back {
+    animation: none !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

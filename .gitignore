@@ -33,3 +33,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# gerado a partir de public/images/logos/ pelo script prebuild
+src/lib/logos.generated.ts
+
+# impeccable: capturas de revisão, cache do hook e rascunho do board de decisão.
+# O design.json fica versionado, é o sidecar do DESIGN.md.
+/.impeccable/review/
+/.impeccable/questions/
+/.impeccable/hook.cache.json

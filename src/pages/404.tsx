@@ -1,21 +1,30 @@
-import { Inter } from "next/font/google";
-import Link from "next/link";
-const inter = Inter({ subsets: ["latin"] });
+import Head from "next/head";
+import { SignLink } from "@/components/ui/SignButton";
+import { Lettering, Panel, Shell } from "@/components/ui/Plate";
 
-export default function Custom404() {
+export default function NotFound() {
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-center  ${inter.className}`}
-    >
-      <h1 className="text-slate-300 md:text-6xl text-2xl font-bold">
-        Ops... Essa rota não existe.
-      </h1>
-      <Link
-        className="md:text-2xl text-xl text-slate-300 underline mt-5"
-        href="/"
-      >
-        Voltar
-      </Link>
-    </main>
+    <>
+      <Head>
+        <title>Página não encontrada | Vista Aérea Filmes</title>
+        <meta name="robots" content="noindex" />
+      </Head>
+      <Panel field="plate" className="flex min-h-[100svh] items-center pt-[4.5rem]">
+        <Shell className="py-20">
+          <div className="mb-8 h-[3px] w-full bg-arrow" role="presentation" />
+          <Lettering as="h1" className="text-asphalt">
+            Essa saída
+            <br />
+            não existe
+          </Lettering>
+          <p className="mt-8 max-w-measure text-lg font-medium leading-[1.5] text-asphalt/80">
+            Você passou da entrada. Volte ao início e siga pela placa.
+          </p>
+          <div className="mt-10">
+            <SignLink href="/">Voltar ao início</SignLink>
+          </div>
+        </Shell>
+      </Panel>
+    </>
   );
 }
