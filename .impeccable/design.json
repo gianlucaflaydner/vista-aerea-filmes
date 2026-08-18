@@ -1,0 +1,345 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-17T00:00:00.000Z",
+  "title": "Design System: Vista Aérea Filmes",
+  "extensions": {
+    "colorMeta": {
+      "plate": {
+        "role": "primary",
+        "displayName": "Sign Yellow",
+        "canonical": "#F2B705",
+        "tonalRamp": [
+          "#241A00",
+          "#4A3600",
+          "#725300",
+          "#9A7100",
+          "#C39000",
+          "#F2B705",
+          "#F8D264",
+          "#FCEDC2"
+        ]
+      },
+      "arrow": {
+        "role": "secondary",
+        "displayName": "Arrow Red",
+        "canonical": "#D6300F",
+        "tonalRamp": [
+          "#2A0902",
+          "#4E1204",
+          "#761C07",
+          "#9E250A",
+          "#C22C0D",
+          "#D6300F",
+          "#EE7256",
+          "#F8C4B8"
+        ]
+      },
+      "route": {
+        "role": "tertiary",
+        "displayName": "Highway Green",
+        "canonical": "#0E5C3A",
+        "tonalRamp": [
+          "#03170E",
+          "#062B1B",
+          "#094127",
+          "#0E5C3A",
+          "#12784C",
+          "#189761",
+          "#4FC392",
+          "#B8E8D2"
+        ]
+      },
+      "asphalt": {
+        "role": "neutral",
+        "displayName": "Asphalt",
+        "canonical": "#14140F",
+        "tonalRamp": [
+          "#0A0A07",
+          "#14140F",
+          "#24241B",
+          "#3A3A2C",
+          "#575744",
+          "#7C7C63",
+          "#ABAB92",
+          "#DCDCCB"
+        ]
+      },
+      "enamel": {
+        "role": "neutral",
+        "displayName": "Enamel White",
+        "canonical": "#F4F1E8",
+        "tonalRamp": [
+          "#2A2820",
+          "#413E33",
+          "#5D5949",
+          "#7C7767",
+          "#A09B8A",
+          "#C4BFAF",
+          "#E0DCCE",
+          "#F4F1E8"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Painted Name",
+        "purpose": "Hero headline only, sized so the primary action still fits the first viewport."
+      },
+      "headline": {
+        "displayName": "Section Lettering",
+        "purpose": "Every section title, always uppercase, always preceded by a 3px rule and wrapped in Wipe."
+      },
+      "title": {
+        "displayName": "Painted Band",
+        "purpose": "The yellow band naming a portfolio work; equipment values use the same face slightly smaller."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "The single paragraph that answers a section title. Capped at 36rem."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running copy, capped at 36rem, never below 16px."
+      },
+      "label": {
+        "displayName": "Data Plaquette",
+        "purpose": "Field labels, nav links, data strips, footer handles. The informational voice of the system."
+      },
+      "plate-label": {
+        "displayName": "Stamped Caption",
+        "purpose": "Widest tracking step, for the small stamped caption on a plate."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease-pass",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "The world's only curve: the plate passes fast and settles. All transitions and entrances."
+      },
+      {
+        "name": "wipe",
+        "value": "clip-path: inset(0 100% 0 0) → inset(0 0% 0 0); 0.9s ease-pass, viewport-once",
+        "purpose": "Hard-edge left-to-right uncover. Section headings only."
+      },
+      {
+        "name": "reveal",
+        "value": "opacity 0 → 1, translateY 34px → 0; 0.85s ease-pass, viewport-once, stagger ≤0.3s",
+        "purpose": "Fade-rise. Content panels only: portfolio panels, clients marquee, contact form, equipment cut-out band."
+      },
+      {
+        "name": "parallax-contato",
+        "value": "translateY -10% → 10% of child height across scroll (distance 20)",
+        "purpose": "The single authored moment: the Taquara aerial behind the contact section."
+      },
+      {
+        "name": "drift",
+        "value": "translate3d(0,0,0) → translate3d(-50%,0,0), 46s linear infinite",
+        "purpose": "Client logo marquee, first row."
+      },
+      {
+        "name": "drift-back",
+        "value": "translate3d(-50%,0,0) → translate3d(0,0,0), 52s linear infinite",
+        "purpose": "Client logo marquee, second row, opposite direction."
+      },
+      {
+        "name": "state-transition",
+        "value": "300ms ease-pass (colors), 500ms ease-pass (transform/menu)",
+        "purpose": "Hover and open/close states."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "576px"
+      },
+      {
+        "name": "md",
+        "value": "960px"
+      },
+      {
+        "name": "lg",
+        "value": "1440px"
+      },
+      {
+        "name": "xl",
+        "value": "1728px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Arrow Button (primary)",
+      "kind": "button",
+      "refersTo": "button-arrow",
+      "description": "The primary action: WhatsApp and form submission. Arrow red with a sliding chevron.",
+      "html": "<a class=\"ds-btn-arrow\" href=\"#\"><span>Falar no WhatsApp</span><svg class=\"ds-btn-chevron\" viewBox=\"0 0 20 16\" aria-hidden=\"true\" fill=\"currentColor\"><path d=\"M11.2 0 20 8l-8.8 8-2.3-2.2 4.2-4.2H0V6.4h13.1L8.9 2.2z\"/></svg></a>",
+      "css": ".ds-btn-arrow { display: inline-flex; align-items: center; justify-content: center; gap: 1rem; padding: 1rem 2rem; border: none; border-radius: 0; background: var(--arrow, #D6300F); color: #F4F1E8; font-family: Archivo, ui-sans-serif, system-ui, sans-serif; font-size: 0.875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; text-decoration: none; cursor: pointer; transition: background-color 300ms cubic-bezier(0.16,1,0.3,1), color 300ms cubic-bezier(0.16,1,0.3,1); } .ds-btn-arrow:hover { background: #14140F; } .ds-btn-arrow:focus-visible { outline: 3px solid #D6300F; outline-offset: 2px; } .ds-btn-chevron { height: 1rem; width: 1.25rem; flex-shrink: 0; transition: transform 300ms cubic-bezier(0.16,1,0.3,1); } .ds-btn-arrow:hover .ds-btn-chevron { transform: translateX(0.375rem); } .ds-btn-arrow[disabled] { opacity: 0.55; cursor: not-allowed; }"
+    },
+    {
+      "name": "Plate Button (secondary)",
+      "kind": "button",
+      "refersTo": "button-plate",
+      "description": "Secondary outbound action on a dark field: asphalt with sign-yellow lettering, flipping to red on hover.",
+      "html": "<a class=\"ds-btn-plate\" href=\"#\"><span>Ver mais no Instagram</span><svg class=\"ds-btn-chevron2\" viewBox=\"0 0 20 16\" aria-hidden=\"true\" fill=\"currentColor\"><path d=\"M11.2 0 20 8l-8.8 8-2.3-2.2 4.2-4.2H0V6.4h13.1L8.9 2.2z\"/></svg></a>",
+      "css": ".ds-btn-plate { display: inline-flex; align-items: center; justify-content: center; gap: 1rem; padding: 1rem 2rem; border: none; border-radius: 0; background: #14140F; color: #F2B705; font-family: Archivo, ui-sans-serif, system-ui, sans-serif; font-size: 0.875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; text-decoration: none; cursor: pointer; transition: background-color 300ms cubic-bezier(0.16,1,0.3,1), color 300ms cubic-bezier(0.16,1,0.3,1); } .ds-btn-plate:hover { background: #D6300F; color: #F4F1E8; } .ds-btn-plate:focus-visible { outline: 3px solid #D6300F; outline-offset: 2px; } .ds-btn-chevron2 { height: 1rem; width: 1.25rem; flex-shrink: 0; transition: transform 300ms cubic-bezier(0.16,1,0.3,1); } .ds-btn-plate:hover .ds-btn-chevron2 { transform: translateX(0.375rem); }"
+    },
+    {
+      "name": "Outline Button (tertiary)",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Inherits the field it sits on via currentColor; used for in-page navigation that is not the primary action.",
+      "html": "<div style=\"background:#F2B705;padding:1.5rem;display:inline-block\"><a class=\"ds-btn-outline\" href=\"#\">Ver os trabalhos</a></div>",
+      "css": ".ds-btn-outline { display: inline-flex; align-items: center; justify-content: center; padding: 1rem 2rem; border: 3px solid currentColor; border-radius: 0; background: transparent; color: #14140F; font-family: Archivo, ui-sans-serif, system-ui, sans-serif; font-size: 0.875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; text-decoration: none; cursor: pointer; transition: background-color 300ms cubic-bezier(0.16,1,0.3,1), color 300ms cubic-bezier(0.16,1,0.3,1), border-color 300ms cubic-bezier(0.16,1,0.3,1); } .ds-btn-outline:hover { background: #14140F; border-color: #14140F; color: #F2B705; } .ds-btn-outline:focus-visible { outline: 3px solid #D6300F; outline-offset: 2px; }"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Enamel-white fill with a 3px asphalt stroke and a visible tracked uppercase label. Focus turns the stroke arrow red.",
+      "html": "<div class=\"ds-field-wrap\"><label class=\"ds-field-label\" for=\"ds-nome\">Seu nome</label><input class=\"ds-field\" id=\"ds-nome\" type=\"text\" placeholder=\"Como te chamar\"></div>",
+      "css": ".ds-field-wrap { background: #F2B705; padding: 1.5rem; } .ds-field-label { display: block; font-family: Archivo, ui-sans-serif, system-ui, sans-serif; font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; color: rgba(20,20,15,0.7); } .ds-field { width: 100%; margin-top: 0.625rem; padding: 0.875rem 1rem; border: 3px solid #14140F; border-radius: 0; background: #F4F1E8; color: #14140F; font-family: Archivo, ui-sans-serif, system-ui, sans-serif; font-size: 1rem; outline: none; transition: border-color 200ms; } .ds-field::placeholder { color: rgba(20,20,15,0.65); } .ds-field:focus { border-color: #D6300F; } .ds-field[aria-invalid=\"true\"] { border-color: #D6300F; }"
+    },
+    {
+      "name": "Header Navigation",
+      "kind": "nav",
+      "refersTo": null,
+      "description": "Fixed asphalt bar, 4.5rem tall, underlined in 3px sign yellow. Label-voice links go full yellow on hover; the WhatsApp plate sits at the right.",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-nav-brand\" href=\"#\">Vista Aérea Filmes</a><ul class=\"ds-nav-list\"><li><a class=\"ds-nav-link\" href=\"#\">Portfólio</a></li><li><a class=\"ds-nav-link\" href=\"#\">Sobre mim</a></li><li><a class=\"ds-nav-link\" href=\"#\">Clientes</a></li></ul><a class=\"ds-nav-cta\" href=\"#\">Falar no WhatsApp</a></header>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; height: 4.5rem; padding: 0 1.5rem; background: #14140F; border-bottom: 3px solid #F2B705; } .ds-nav-brand { font-family: Anton, sans-serif; text-transform: uppercase; letter-spacing: -0.015em; line-height: 1; font-size: 1.5rem; color: #F2B705; text-decoration: none; } .ds-nav-list { display: flex; align-items: center; gap: 2rem; list-style: none; margin: 0; padding: 0; } .ds-nav-link { font-family: Archivo, ui-sans-serif, system-ui, sans-serif; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; color: rgba(244,241,232,0.75); text-decoration: none; transition: color 300ms cubic-bezier(0.16,1,0.3,1); } .ds-nav-link:hover { color: #F2B705; } .ds-nav-link:focus-visible { outline: 3px solid #D6300F; outline-offset: 2px; } .ds-nav-cta { padding: 0.75rem 1.5rem; background: #D6300F; color: #F4F1E8; font-family: Archivo, ui-sans-serif, system-ui, sans-serif; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; text-decoration: none; transition: background-color 300ms cubic-bezier(0.16,1,0.3,1), color 300ms cubic-bezier(0.16,1,0.3,1); } .ds-nav-cta:hover { background: #F2B705; color: #14140F; }"
+    },
+    {
+      "name": "Plate Panel",
+      "kind": "card",
+      "refersTo": "panel-plate",
+      "description": "The system's only container: a full-bleed field carrying the screen-print grain and the enamel sheen. Replaces the card entirely.",
+      "html": "<section class=\"ds-panel ds-panel-plate\"><div class=\"ds-panel-inner\"><div class=\"ds-panel-rule\"></div><h2 class=\"ds-lettering\">O que sobe<br>e o que fica<br>no chão</h2><p class=\"ds-panel-lead\">Eventos, empresarial, institucional e imobiliário.</p></div></section>",
+      "css": ".ds-panel { position: relative; isolation: isolate; overflow: hidden; border-radius: 0; } .ds-panel-plate { background: #F2B705; color: #14140F; } .ds-panel::before { content: \"\"; position: absolute; inset: 0; pointer-events: none; opacity: 0.3; mix-blend-mode: multiply; background-image: repeating-linear-gradient(0deg, rgba(0,0,0,0.5) 0px, rgba(0,0,0,0.5) 1px, transparent 1px, transparent 3px), repeating-linear-gradient(90deg, rgba(0,0,0,0.35) 0px, rgba(0,0,0,0.35) 1px, transparent 1px, transparent 4px); } .ds-panel::after { content: \"\"; position: absolute; inset: 0; pointer-events: none; z-index: 1; background: linear-gradient(104deg, rgba(255,255,255,0.16) 0%, rgba(255,255,255,0) 34%, rgba(0,0,0,0) 66%, rgba(0,0,0,0.08) 100%); } .ds-panel-inner { position: relative; z-index: 2; padding: 3rem 2rem; } .ds-panel-rule { height: 3px; width: 100%; background: #14140F; margin-bottom: 2rem; } .ds-lettering { font-family: Anton, sans-serif; text-transform: uppercase; letter-spacing: -0.015em; line-height: 1; font-weight: 400; margin: 0; font-size: clamp(2.25rem, 6vw, 5rem); } .ds-panel-lead { max-width: 36rem; margin: 2rem 0 0; font-family: Archivo, ui-sans-serif, system-ui, sans-serif; font-weight: 500; line-height: 1.5; font-size: clamp(1.125rem, 1.7vw, 1.5rem); }"
+    },
+    {
+      "name": "Work Plate (poster + painted band)",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "A portfolio work: 16:9 cropped poster with a square arrow-red play badge welded into the corner, and the work's name painted on a sign-yellow band beneath.",
+      "html": "<article class=\"ds-work\"><div class=\"ds-work-media\"><div class=\"ds-work-poster\"></div><span class=\"ds-work-play\" aria-hidden=\"true\"><svg viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M5 3l16 9-16 9z\"/></svg></span></div><div class=\"ds-work-band\"><h3 class=\"ds-work-title\">Eventos</h3></div></article>",
+      "css": ".ds-work { position: relative; display: block; } .ds-work-media { position: relative; aspect-ratio: 16 / 9; width: 100%; overflow: hidden; background: #14140F; } .ds-work-poster { position: absolute; inset: 0; background: linear-gradient(135deg, #3A3A2C 0%, #7C7C63 100%); transition: transform 500ms cubic-bezier(0.16,1,0.3,1); } .ds-work:hover .ds-work-poster { transform: scale(1.03); } .ds-work-play { position: absolute; right: 0; bottom: 0; display: flex; align-items: center; justify-content: center; height: 5rem; width: 5rem; background: #D6300F; color: #F4F1E8; transition: background-color 300ms cubic-bezier(0.16,1,0.3,1), color 300ms cubic-bezier(0.16,1,0.3,1); } .ds-work-play svg { height: 1.75rem; width: 1.75rem; } .ds-work:hover .ds-work-play { background: #F2B705; color: #14140F; } .ds-work-band { background: #F2B705; padding: 1rem 1.5rem; } .ds-work-title { margin: 0; font-family: Anton, sans-serif; text-transform: uppercase; letter-spacing: -0.015em; line-height: 1; font-weight: 400; font-size: clamp(1.5rem, 3.2vw, 2.75rem); color: #14140F; }"
+    },
+    {
+      "name": "WhatsApp Rail / Plate",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "The persistent primary action: a full-width arrow-red rail docked to the bottom edge on phones (body reserves 4rem for it), a 64px square at bottom-right from 576px up.",
+      "html": "<a class=\"ds-rail\" href=\"#\">Falar no WhatsApp<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" fill=\"currentColor\"><path d=\"M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Z\"/></svg></a>",
+      "css": ".ds-rail { display: flex; align-items: center; justify-content: center; gap: 0.75rem; width: 100%; padding: 1rem; background: #D6300F; color: #F4F1E8; border-top: 3px solid #F2B705; border-radius: 0; font-family: Archivo, ui-sans-serif, system-ui, sans-serif; font-size: 0.875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; text-decoration: none; transition: transform 500ms cubic-bezier(0.16,1,0.3,1), background-color 300ms cubic-bezier(0.16,1,0.3,1), color 300ms cubic-bezier(0.16,1,0.3,1); } .ds-rail svg { height: 1.25rem; width: 1.25rem; } .ds-rail:hover { background: #F2B705; color: #14140F; } .ds-rail:focus-visible { outline: 3px solid #D6300F; outline-offset: 2px; }"
+    },
+    {
+      "name": "Client Logo Plate",
+      "kind": "chip",
+      "refersTo": null,
+      "description": "Each client logotype gets its own enamel-white rectangle, the way a logo appears on a real roadside sign. Rows drift in opposite directions and pause on hover.",
+      "html": "<div class=\"ds-logo-row\"><span class=\"ds-logo-plate\">BAND RS</span><span class=\"ds-logo-plate\">SMANIOTTO</span><span class=\"ds-logo-plate\">VIACAVA</span></div>",
+      "css": ".ds-logo-row { display: flex; gap: 1.75rem; background: #0E5C3A; padding: 1.5rem; } .ds-logo-row:hover .ds-logo-plate { animation-play-state: paused; } .ds-logo-plate { display: flex; align-items: center; justify-content: center; height: 7rem; width: 12rem; flex-shrink: 0; padding: 0 1.25rem; background: #F4F1E8; border-radius: 0; color: #14140F; font-family: Archivo, ui-sans-serif, system-ui, sans-serif; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; }"
+    },
+    {
+      "name": "Data Strip",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "The plaquette bolted along the bottom edge of a plate: tracked uppercase facts divided by 3px rules, no polite margins.",
+      "html": "<div class=\"ds-strip\"><ul><li>Taquara · Igrejinha · Parobé · Três Coroas · Rolante</li><li>Aéreo com drone + captação em solo</li><li>+55 51 98406-5735</li></ul></div>",
+      "css": ".ds-strip { background: #F2B705; border-top: 3px solid #14140F; } .ds-strip ul { display: flex; align-items: center; list-style: none; margin: 0; padding: 0 1.5rem; } .ds-strip li { flex: 1; padding: 1.25rem 0; font-family: Archivo, ui-sans-serif, system-ui, sans-serif; font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; color: rgba(20,20,15,0.75); } .ds-strip li + li { border-left: 3px solid rgba(20,20,15,0.2); padding-left: 1.5rem; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "A Placa da RS-115",
+    "overview": "The world is the roadside signage of the RS-115 through the Vale do Paranhana: enamelled steel plates bolted at the edge of a lot, painted to be read at sixty kilometres an hour under full sun. Everything in the build follows from that object. A page region is not a card floating on a neutral canvas; it is a whole plate, one colour, bleeding to both edges of the viewport, with the lettering painted directly on it. The screen never reads as a document. It reads as a run of plates passing.\n\nDensity is high and unapologetic. Type is enormous where it names something and small, bold and widely tracked where it carries data; there is no polite mid-grey in between. The materials are two and only two: a diagonal enamel sheen that reads as sun crossing the steel, and a fine screen-print grain that keeps the flat colour from looking like a CSS fill. Both live on the panel itself, never on a floating object.\n\nThe build is flat by construction. There is no shadow token anywhere in the system, no border radius anywhere in the system, and no blur. Separation is done with 3px painted rules and with the collision of two saturated fields. Depth exists in exactly one place, the aerial photograph of Taquara moving in parallax behind the contact section, and it is authored as the single moment where the plate steps aside and the actual view appears.",
+    "keyCharacteristics": [
+      "Colour owns whole regions; nothing is an accent speck on neutral.",
+      "Zero radius, zero shadow, zero blur. The plate is straight, flat and bolted.",
+      "Anton uppercase for anything named; Archivo for anything informational.",
+      "Red is reserved: direction and action only.",
+      "Motion has three named roles and no fourth."
+    ],
+    "rules": [
+      {
+        "name": "The Whole Field Rule",
+        "body": "A colour claims an entire section, edge to edge, or it does not appear. There are no coloured cards on a neutral page and no tinted panels floating inside a section of another colour.",
+        "section": "colors"
+      },
+      {
+        "name": "The Reserved Red Rule",
+        "body": "Arrow red marks direction or action and nothing else. Every red pixel on the page is either the primary action, a play control, a focus/selection state, or an error. Using it decoratively destroys the only signal the system has.",
+        "section": "colors"
+      },
+      {
+        "name": "The Alternating Plate Rule",
+        "body": "Sections alternate fields in a fixed shipped rhythm: yellow hero, asphalt portfolio, enamel \"sobre\", green clients, yellow equipment, photograph contact, asphalt footer. Two adjacent sections never share a field.",
+        "section": "colors"
+      },
+      {
+        "name": "The Opacity Ladder Rule",
+        "body": "Secondary text is the field's own foreground at a step from the opacity ladder (/85, /75, /70, /65, /50, /20, /15), never a new grey. The palette stays at five.",
+        "section": "colors"
+      },
+      {
+        "name": "The Line-Height One Rule",
+        "body": ".lettering sets line-height to exactly 1 and never lower. Accented Portuguese uppercase stacks an accent above and a cedilla below on adjacent lines (ILUMINAÇÃO over CAPTAÇÃO); anything tighter makes them touch.",
+        "section": "typography"
+      },
+      {
+        "name": "The Two Voices Rule",
+        "body": "Anton names, Archivo informs. Anton never sets a sentence of running copy; Archivo never sets a section title. There is no third face and no system display face. Impact and its relatives are explicitly out of the stack.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tracked Small-Caps Rule",
+        "body": "Any text below 14px is uppercase, weight 700, and tracked at least 0.18em. Small type in this world is stamped data, never quiet prose.",
+        "section": "typography"
+      },
+      {
+        "name": "The Bleeding Plate Rule",
+        "body": "A section is a full-bleed field; only its text is gutter-constrained. Marquees, data strips and ground bars run edge to edge.",
+        "section": "layout"
+      },
+      {
+        "name": "The No Shadow Rule",
+        "body": "Nothing in this system is lifted. If an element needs to separate from its surroundings, give it a 3px asphalt rule, a different field, or a white backing plate. Never a shadow, never a radius, never a glow.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Ground Line Rule",
+        "body": "Any cut-out product image that carries its own baked-in shadow gets a solid asphalt bar under it to land on. Floating cut-outs are the failure mode this rule exists to prevent.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Neutralise, Never Branch Rule",
+        "body": "Every reduced-motion path zeroes values (distance, duration, clip inset) while keeping the node structure byte-identical, via useReducedMotionSafe. Motion's own useReducedMotion reads the media query on the first client render while the server renders false, which breaks hydration and can strand an entire section at opacity 0.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "Do give each new section a whole field from the four Panel colours, alternating against its neighbours, and let it bleed edge to edge.",
+      "Do open a section with a 3px rule and an Anton uppercase Lettering title wrapped in Wipe.",
+      "Do keep .lettering at line-height exactly 1; Portuguese accented uppercase collides below it.",
+      "Do reserve arrow red for direction, action, focus, selection and error.",
+      "Do separate with 3px asphalt rules, a second field, or a white backing plate.",
+      "Do crop every YouTube poster to 16:9 with object-cover; the source is 4:3 with letterbox bars.",
+      "Do keep body type at 16px or above and make every touch target at least 44px, because the audience is on a phone in daylight.",
+      "Do label every form control visibly, above the field, in the tracked uppercase label voice.",
+      "Do derive secondary tones from the opacity ladder on an existing colour.",
+      "Do neutralise motion values under prefers-reduced-motion while keeping the rendered node structure identical."
+    ],
+    "donts": [
+      "Don't add a border radius. There is no radius token; every corner in this system is square.",
+      "Don't add a shadow, a glow or a blur of any kind. The build has none, and lifting a plate off the page breaks the material.",
+      "Don't put a coloured card on a neutral background, or a tinted box inside a section of another colour. A region is a plate or it is nothing.",
+      "Don't use arrow red as decoration, as a large background for reading, or on a non-action.",
+      "Don't introduce a sixth colour or a new grey; use the existing five with an opacity step.",
+      "Don't set running copy in Anton or a section title in Archivo, and don't add a third family or a system display face.",
+      "Don't hide content or an action behind hover, because most of the audience has no hover at all.",
+      "Don't float a cut-out image with a baked-in shadow; give it the asphalt ground bar.",
+      "Don't animate body copy, and don't invent a fourth motion role; Wipe, Reveal and the contact parallax are the whole vocabulary.",
+      "Don't branch node structure on prefers-reduced-motion, and don't call Motion's useReducedMotion directly in server-rendered content.",
+      "Don't render social networks as icon images; the project's social PNGs are inconsistent in treatment and the system names them as words."
+    ]
+  }
+}

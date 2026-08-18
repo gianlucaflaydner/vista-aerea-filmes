@@ -1,77 +1,75 @@
-import Image from "next/image";
-import facebookIcon from "../../../public/images/facebook-icon-white.png";
-import instagramIcon from "../../../public/images/instagram-icon-dark.png";
-import youtubeIcon from "../../../public/images/youtube-icon-dark.png";
-import Link from "next/link";
-import { Oswald } from "next/font/google";
-const oswald = Oswald({ subsets: ["latin"], weight: "300" });
+import { Shell } from "@/components/ui/Plate";
+import { FACEBOOK_URL, INSTAGRAM_URL, WHATSAPP_URL, YOUTUBE_URL } from "@/lib/content";
 
+const social = [
+  { href: INSTAGRAM_URL, label: "Instagram", handle: "@vistaaereafilmes" },
+  { href: YOUTUBE_URL, label: "YouTube", handle: "@vistaaereafilmes" },
+  { href: FACEBOOK_URL, label: "Facebook", handle: "vistaaereadrone" },
+];
+
+/* As redes aparecem como palavra, não como ícone: os PNGs sociais do projeto
+   vêm em tratamentos diferentes entre si, uns claros e outros escuros, e
+   nenhum deles pertence a este sistema. Os arquivos seguem no repositório,
+   intocados. */
 export default function Footer() {
   return (
-    <footer
-      className={`w-screen h-[200px] flex flex-col pt-10 ${oswald.className}`}
-    >
-      <div className="w-screen flex flex-row justify-between md:px-20 px-6 border-b-2 pb-4  border-zinc-200">
-        <div className="flex flex-row items-center">
-          <h2 className="text-slate-200 font-bold text-lg me-4">
-            Minhas redes sociais:{" "}
-          </h2>
-          <ul className="flex items-center gap-5">
-            <li>
-              <Link
-                href="https://www.facebook.com/vistaaereadrone"
-                target="_blank"
-              >
-                <Image
-                  src={facebookIcon}
-                  alt="ícone do facebook"
-                  width={30}
-                  height={40}
-                />
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="https://www.instagram.com/vistaaereafilmes/"
-                target="_blank"
-              >
-                <Image
-                  src={instagramIcon}
-                  alt="ícone do instagram"
-                  width={30}
-                  height={40}
-                />
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="https://www.youtube.com/@vistaaereafilmes/videos"
-                target="_blank"
-              >
-                <Image
-                  src={youtubeIcon}
-                  alt="ícone do youtube"
-                  width={35}
-                  height={40}
-                />
-              </Link>
-            </li>
-          </ul>
+    <footer className="border-t-[3px] border-plate bg-asphalt text-enamel">
+      <Shell className="py-16 sm:py-20">
+        <div className="grid gap-12 md:grid-cols-12 md:gap-10">
+          <div className="md:col-span-5">
+            <p className="lettering text-3xl text-plate sm:text-4xl">
+              Vista Aérea Filmes
+            </p>
+            <p className="mt-5 max-w-measure leading-[1.6] text-enamel/70">
+              Vídeo aéreo e em solo no Vale do Paranhana, Rio Grande do Sul.
+            </p>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="lettering mt-7 inline-block text-2xl text-enamel transition-colors duration-300 ease-pass hover:text-plate sm:text-3xl"
+            >
+              +55 51 98406-5735
+            </a>
+          </div>
+
+          <nav aria-label="Redes sociais" className="md:col-span-6 md:col-start-7">
+            <ul className="border-t border-enamel/20">
+              {social.map((item) => (
+                <li key={item.label} className="border-b border-enamel/20">
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center justify-between gap-6 py-4"
+                  >
+                    <span className="lettering text-2xl text-enamel transition-colors duration-300 ease-pass group-hover:text-plate">
+                      {item.label}
+                    </span>
+                    <span className="text-xs font-bold uppercase tracking-rule text-enamel/50">
+                      {item.handle}
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
-      </div>
-      <div className="flex justify-center items-center h-full">
-        <h2 className="text-italic text-sm text-slate-200 text-opacity-70">
-          {" "}
-          Proudly made by{" "}
-          <Link
-            className="underline"
+
+        <div className="mt-14 flex flex-col gap-3 border-t border-enamel/20 pt-7 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-xs font-bold uppercase tracking-rule text-enamel/50">
+            © {new Date().getFullYear()} Vista Aérea Filmes · Leandro Laydner
+          </p>
+          <a
             href="https://www.linkedin.com/in/gianluca-laydner/"
             target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs italic text-enamel/50 transition-colors duration-300 ease-pass hover:text-plate"
           >
-            Gianluca Laydner
-          </Link>
-        </h2>
-      </div>
+            Proudly made by Gianluca Laydner
+          </a>
+        </div>
+      </Shell>
     </footer>
   );
 }
